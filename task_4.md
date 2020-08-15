@@ -42,7 +42,7 @@ RecommendationSystem:
     	def __get_mean_of_movies(self):
 		# for each movie
 			# for each friend
-			pass
+		pass
 
 	# space complexity - O(1)	
 	def __calc_discussability(self, movie_title):
