@@ -1,21 +1,21 @@
 Space complexity of the algorithm is O(M*(M+F)).
 
 Steps that contribute most to space complexity:
-	1. finding and storing in dict similar movies for every movie using dfs - O(M*M). DFS - O(M). DFS is called for every movie - O(M*M) - the worst case, if graph is fully connected.
-	2. converting dict {k: list} to dict {k: set} - O(M*F). Conversion list->set - O(M), for every friend O(M*F) - the worst case when all friends watched all movies 
+	<br>1. finding and storing in dict similar movies for every movie using dfs - O(M* M). DFS - O(M). DFS is called for every movie - O(M* M) - the worst case, if graph is fully connected.
+	<br>2. converting dict {k: list} to dict {k: set} - O(M* F). Conversion list->set - O(M), for every friend O(M* F) - the worst case when all friends watched all movies 
 
 
 ```
-RecommendationSystem:
+class MovieRecommendationSystem:
 	def __init__(self, data):
 		# space complexity(list2set) - O(M)
-        self.movies = set(data['movies'])
-        self.movies_pairs = data['movies_pairs']
+		self.movies = set(data['movies'])
+		self.movies_pairs = data['movies_pairs']
 		# space complexity(list2set) - O(M*F)
-        self.friends = {k: set(v) for k, v in data['friends'].items()}
-        self.watched_movies = self.__get_watched_movies()
-        self.similar_movies = self.__get_similar_movies()
-        self.mean_of_movies = self.__get_mean_of_movies()
+		self.friends = {k: set(v) for k, v in data['friends'].items()}
+		self.watched_movies = self.__get_watched_movies()
+		self.similar_movies = self.__get_similar_movies()
+		self.mean_of_movies = self.__get_mean_of_movies()
 	
 	# space complexity - O(M)
 	def __get_watched_movies(self):
@@ -39,10 +39,10 @@ RecommendationSystem:
 		pass
 
 	# space complexity - O(M)
-    def __get_mean_of_movies(self):
-    	# for each movie
-    		# for each friend (mean calculation uses internal loop)
-    	pass
+    	def __get_mean_of_movies(self):
+		# for each movie
+			# for each friend
+		pass
 
 	# space complexity - O(1)	
 	def __calc_discussability(self, movie_title):
