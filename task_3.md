@@ -1,9 +1,9 @@
-Time complexity of the algorithm is O(M*F*min(len(s1),len(s2) + M*(M+P)).
+Time complexity of the algorithm is O(M* F* min(len(s1),len(s2) + M*(M+P)).
 
 Steps that contribute most to time complexity:
-	1. finding similar movies for every movie using dfs - O(M*(M+P)). DFS - O(V+E). DFS is called for every movie - O(M*(V+E)), where V=M, E=P
-	2. calculating mean values using set intersection aproach - O(M*F*min(len(s1),len(s2)). 
-	   Set intersection - O(min(len(s1),len(s2))), for every friend - O(F*min(len(s1),len(s2))), then for every movie - O(M*F*min(len(s1),len(s2)))
+	<br>1. finding similar movies for every movie using dfs - O(M*(M+P)). DFS - O(V+E). DFS is called for every movie - O(M*(V+E)), where V=M, E=P
+	<br>2. calculating mean values using set intersection aproach - O(M* F* min(len(s1),len(s2)))
+	   <br>Set intersection - O(min(len(s1),len(s2))), for every friend - O(F* min(len(s1),len(s2))), then for every movie - O(M* F* min(len(s1),len(s2)))
 
 
 ```
