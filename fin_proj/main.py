@@ -35,6 +35,9 @@ class MovieRecommendationSystem:
 
     # returns a dict where k - movie title, v - set of similar movies
     def __get_similar_movies(self):
+        if len(self.movies_pairs) == 0:
+            return {}
+
         def _dfs(v, graph, visited, similar_movies):
             visited[v] = True
 
@@ -75,13 +78,16 @@ class MovieRecommendationSystem:
     def __get_mean_of_movies(self):
         mean_of_movies = {}
         for movie_title in self.movies:
-            mean_of_movies[movie_title] = sum([len(self.similar_movies[movie_title] & self.friends[friend]) for friend in self.friends]) / len(self.friends)
+            if len(self.friends) == 0:
+                mean_of_movies[movie_title] = 0
+            else:
+                mean_of_movies[movie_title] = sum([len(self.similar_movies.get(movie_title, set()) & self.friends[friend]) for friend in self.friends]) / len(self.friends)
 
         return mean_of_movies
 
     # returns discussability metric for given movie
     def __calc_discussability(self, movie_title):
-        #if movie was not watched there is nothing to discuss
+        # if movie was not watched there is nothing to discuss
         if movie_title not in self.watched_movies:
             return 0
 
@@ -89,11 +95,11 @@ class MovieRecommendationSystem:
 
     # returns uniqueness metric for given movie
     def __calc_uniqueness(self, movie_title):
-        # movie is absolutely unique if nobody watched it
-        if movie_title not in self.watched_movies.keys():
-            return float('inf')
-
         mean = self.mean_of_movies[movie_title]
+
+        # movie is absolutely unique if nobody watched it
+        if movie_title not in self.watched_movies.keys() or mean == 0:
+            return float('inf')
 
         return 1 / mean
 

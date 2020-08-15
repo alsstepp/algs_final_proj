@@ -23,7 +23,7 @@
 	"friends": {
 		"Ivan": ["The Matrix", "Inception", "Gladiator", "Troy", "The Pianist"],
 		"Maria": ["The Matrix", "In Time","Inception", "Troy"],
-		"Vladimir": ["In Time"],
+		"Vladimir": ["Blade Runner"],
 		"Elena": ["Schindler's List"],
 		"Maxim": [],
 		"Irina": ["The Matrix", "Blade Runner", "Gladiator"]
