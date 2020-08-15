@@ -1,0 +1,31 @@
+{
+	"movies": [
+		"The Matrix",
+		"Inception",
+		"In Time",
+		"Blade Runner",
+		"Gladiator",
+		"Troy",
+		"Seven Samurai",
+		"Schindler's List",
+		"The Pianist"
+	],
+
+	"movies_pairs": [
+		["The Matrix", "Inception"],
+		["Inception", "In Time"],
+		["The Matrix", "Blade Runner"],
+		["Seven Samurai", "Gladiator"],
+		["Troy", "Gladiator"],
+		["Schindler's List", "The Pianist"]
+	],
+
+	"friends": {
+		"Ivan": ["The Matrix", "Inception", "Gladiator", "Troy", "The Pianist"],
+		"Maria": ["The Matrix", "In Time","Inception", "Troy"],
+		"Vladimir": ["In Time"],
+		"Elena": ["Schindler's List"],
+		"Maxim": [],
+		"Irina": ["The Matrix", "Blade Runner", "Gladiator"]
+	}
+}
