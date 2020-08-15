@@ -6,7 +6,7 @@ Steps that contribute most to space complexity:
 
 
 ```
-RecommendationSystem:
+class MovieRecommendationSystem:
 	def __init__(self, data):
 		# space complexity(list2set) - O(M)
 		self.movies = set(data['movies'])
